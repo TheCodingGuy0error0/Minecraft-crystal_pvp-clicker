@@ -17,7 +17,7 @@ def crystal_cycle():
 def on_press(key):
     global running, cycle_thread
     try:
-        if key.char and key.char.lower() == 'f':
+        if key.char and key.char.lower() == 'l':
             if not running:
                 running = True
                 cycle_thread = threading.Thread(target=crystal_cycle)
@@ -29,6 +29,6 @@ def on_press(key):
         pass  # Special keys (not used here)
 
 if __name__ == "__main__":
-    print("Press F to start/stop crystal cycle loop.")
+    print("Press L to start/stop crystal cycle loop.")
     with Listener(on_press=on_press) as listener:
         listener.join()
